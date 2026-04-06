@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Yash Kawli | 3D Artist</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+          }
+        }
+    </script>
+</head>
+<body class="bg-black text-white font-[Poppins] relative overflow-x-hidden">
+
+<!-- Background Video -->
+<video class="fixed inset-0 w-full h-full object-cover z-[-1]" autoplay muted loop playsinline>
+    <source src="bg.mp4" type="video/mp4">
+</video>
+<!-- Dark Overlay -->
+<div class="fixed inset-0 bg-black/70 z-0"></div>
+<!-- Page Content Wrapper -->
+<div class="relative z-10">
+    <!-- Hero Section -->
+    <section class="h-screen flex flex-col justify-center items-center text-center">
+        <h1 id="title"
+            class="text-5xl md:text-7xl lg:text-8xl leading-none"
+            style="font-family: 'DM Serif Display', serif;">
+            Yash Kawli
+        </h1>
+        <p class="text-xl md:text-2xl mt-6 text-gray-300" id="subtitle">
+            3D Artist | Visual Storyteller
+        </p>
+        <div class="mt-10" id="scrollBtn">
+            <a href="#about"
+               class="border px-8 py-3 rounded-full hover:bg-white hover:text-black transition duration-500">
+                Explore My Work
+            </a>
+        </div>
+    </section>
+</div>
+
+<!-- About Section -->
+<section id="about" class="relative z-10 py-32 px-8 bg-gradient-to-br from-[#0f0f0f] via-[#111827] to-[#1f1f1f]">
+
+    <h2 class="text-5xl font-bold text-center mb-20 tracking-wide">
+        About Me
+    </h2>
+
+    <!-- Cards -->
+    <div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+
+        <!-- EDUCATION CARD -->
+        <div class="about-card bg-white/5 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.6)] flex flex-col h-[440px]">
+
+            <!-- 1️⃣ Top Image (30%) -->
+            <div class="h-[30%] overflow-hidden">
+                <img src="study/edu.jpg" class="w-full h-full object-cover">
+            </div>
+
+            <!-- 2️⃣ Content Area -->
+            <div class="flex-1 p-6 flex flex-col justify-center">
+                <h3 class="text-2xl font-semibold mb-4">Education</h3>
+
+                <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                    <li>BSc IT – Mumbai University</li>
+                    <li>Passed with Distinction</li>
+                    <li>Currently enrolled at MAAC</li>
+                    <li>3D Animation Course</li>
+                </ul>
+            </div>
+
+            <!-- 3️⃣ Bottom Action Area -->
+            <div class="h-[20%] flex items-center justify-center">
+                <button data-section="education"
+                        class="toggle-btn text-3xl hover:scale-125 transition">
+                    ⌄
+                </button>
+            </div>
+
+        </div>
+
+        <!-- INTERESTS CARD -->
+        <div class="about-card bg-white/5 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.6)] flex flex-col h-[440px]">
+
+            <!-- Top Image -->
+            <div class="h-[30%] overflow-hidden">
+                <img src="personal/interest.png" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Content -->
+            <div class="flex-1 p-6 flex flex-col justify-center">
+                <h3 class="text-2xl font-semibold mb-4">What I Like</h3>
+
+                <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                    <li>Gaming</li>
+                    <li>Adventure</li>
+                    <li>Gym Freak</li>
+                    <li>Music</li>
+                    <li>Pokémon</li>
+                </ul>
+            </div>
+
+            <!-- Bottom Arrow -->
+            <div class="h-[20%] flex items-center justify-center">
+                <button data-section="interests" class="toggle-btn text-3xl hover:scale-125 transition">
+                    ⌄
+                </button>
+            </div>
+
+        </div>
+
+        <!-- CREATIVE FOCUS CARD -->
+        <!-- CREATIVE FOCUS CARD -->
+        <div class="about-card bg-white/5 border border-white/10 rounded-2xl overflow-hidden backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(0,0,0,0.6)] flex flex-col h-[440px]">
+
+            <!-- Top Image -->
+            <div class="h-[30%] overflow-hidden">
+                <img src="focus/creative.png" class="w-full h-full object-cover">
+            </div>
+
+            <!-- Content -->
+            <div class="flex-1 p-6 flex flex-col justify-center">
+                <h3 class="text-2xl font-semibold mb-4">Creative Focus</h3>
+
+                <ul class="text-gray-300 text-sm space-y-2 list-disc list-inside">
+                    <li>Adobe Photoshop</li>
+                    <li>Premiere Pro</li>
+                    <li>3DS Max</li>
+                    <li>Maya</li>
+                    <li>After Effects</li>
+                </ul>
+            </div>
+
+            <!-- Bottom Arrow -->
+            <div class="h-[20%] flex items-center justify-center">
+                <button data-section="creative" class="toggle-btn text-3xl hover:scale-125 transition">
+                    ⌄
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- EXPANDABLE CONTENT -->
+    <div id="expandedContainer" class="collapsed overflow-hidden mt-20">
+        <div id="education" class="hidden-content hidden">
+            <h2 class="text-4xl font-bold text-center mb-12">Education</h2>
+            <div class="marquee flex gap-8 whitespace-nowrap">
+                <img src="study/img1.jpg" class="h-60 rounded-xl">
+                <img src="study/img2.jpg" class="h-60 rounded-xl">
+                <img src="study/img3.jpg" class="h-60 rounded-xl">
+                <img src="study/img4.jpg" class="h-60 rounded-xl">
+            </div>
+        </div>
+
+        <div id="interests" class="hidden-content hidden">
+            <h2 class="text-4xl font-bold text-center mb-12">Interests</h2>
+            <div class="marquee flex gap-8 whitespace-nowrap">
+                <img src="personal/game1.jpg" class="h-60 rounded-xl">
+                <img src="personal/game2.jpg" class="h-60 rounded-xl">
+                <img src="personal/game3.jpg" class="h-60 rounded-xl">
+                <img src="personal/game4.jpg" class="h-60 rounded-xl">
+            </div>
+        </div>
+
+        <div id="creative" class="hidden-content hidden">
+            <h2 class="text-4xl font-bold text-center mb-12">Creative Work</h2>
+            <div class="marquee flex gap-8 whitespace-nowrap">
+                <img src="focus/work1.jpg" class="h-60 rounded-xl">
+                <img src="focus/work2.jpg" class="h-60 rounded-xl">
+                <img src="focus/work3.jpg" class="h-60 rounded-xl">
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- Showcase Section -->
+<section id="showcase" class="min-h-screen bg-black py-32 px-8 relative">
+    <h2 class="text-5xl font-bold text-center mb-20 tracking-wide">
+        Featured Work
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-12 max-w-6xl mx-auto">
+
+        <!-- Photoshop -->
+        <div class="group relative overflow-hidden rounded-2xl cursor-pointer">
+            <img src="photoshop/de.jpg"
+                 class="w-full h-[500px] object-cover transform group-hover:scale-110 transition duration-700">
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-700 flex items-center justify-center">
+                <h3 class="text-2xl font-semibold tracking-widest">PHOTOSHOP</h3>
+            </div>
+        </div>
+
+        <!-- Premiere -->
+        <div class="group relative overflow-hidden rounded-2xl cursor-pointer h-[500px]">
+            <video src="pro/bappa.mp4" autoplay muted loop playsinline class="w-full h-full object-cover transform group-hover:scale-110 transition duration-700">
+            </video>
+            <div class="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition duration-700 flex items-center justify-center">
+                <h3 class="text-2xl font-semibold tracking-widest">PREMIERE PRO</h3>
+            </div>
+
+        </div>
+
+        <!-- 3DS Max -->
+        <div class="group relative overflow-hidden rounded-2xl cursor-pointer h-[500px] bg-black">
+            <div id="three-container" class="w-full h-[500px] rounded-2xl overflow-hidden bg-black"></div>
+            <div class="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition duration-500 flex items-center justify-center">
+                <h3 class="text-2xl font-semibold tracking-widest">3DS MAX</h3>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- Animations -->
+<script type="module" src="main.js"></script>
+
+
+</body>
+</html>

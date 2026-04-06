@@ -1,0 +1,25 @@
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.marquee {
+  animation: marquee 20s linear infinite;
+}
+
+#expandedContainer {
+  transition: max-height 0.7s ease;
+}
+
+#expandedContainer.collapsed {
+  max-height: 0;
+}
+
+#expandedContainer.expanded {
+  max-height: 2000px;
+}
